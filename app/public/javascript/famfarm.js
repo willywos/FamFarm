@@ -1,32 +1,21 @@
 
+function play(soundfile) {
+	$("#sound").html("<audio controls preload=\"auto\" src=\"" + soundfile + "\" autoplay=\"autoplay\" autobuffer></audio>");
+	$("#sound").css("visibility", "hidden");
+}
+
 function load_images(page) {
-	//alert('in here');
-	//alert(page)
-	
-	//1 * 4 = 4 + 1 = 5
-	//2 * 4 = 8 + 2 = 10
-	//3 * 4 = 12 + 3 = 15
-	//4 * 4 = 16 + 4 = 20
-	
-	// 5 - 4 = 1
-	// 10 - 4 = 6
-	
 	var numTiles = 4
 	var stopAt = (page * numTiles) + page;
 	var startAt = stopAt - numTiles;
 	var picIndex = 1;
+	
 	for(var i = startAt; i <= stopAt; i++) {
 		var picImage = "#pic_image_" + picIndex;
-			
-		$(picImage).attr("src", '/images/animal_' + i + '.png')
-		
-		if(picIndex <= 5) {
-		//	alert('i:' + i)
-		//	alert('picIndex' + picIndex)
-		}
+		$(picImage).attr("src", '/images/animal_' + i + '.png');
+		$(picImage).attr("data-sound", '/sounds/animal_' + i + '.mp3');
 		picIndex++;
-	}
-	
+	}	
 }
 
 
@@ -43,6 +32,23 @@ $(document).ready(function() {
 	$("#right_arrow").click(function() {
 		page = page + 1;
 		load_images(page)
+	});
+	
+	
+	$("#pic_image_1").click(function() {
+		play($(this).attr("data-sound"));
+	});
+	
+	$("#pic_image_2").click(function() {
+		play($(this).attr("data-sound"));
+	});
+	
+	$("#pic_image_3").click(function() {
+		play($(this).attr("data-sound"));
+	});
+	
+	$("#pic_image_4").click(function() {
+		play($(this).attr("data-sound"));
 	});
 	
 	$("#pic_1").mouseover(function() {
