@@ -2,11 +2,14 @@
 %html
 	%head
 		%meta{:charset => "utf-8"}
-		%title= @title || "FamFarm"
 		%meta{:name => "description", :content => "FamFarm where kids come to learn about animals on the farm!"}
+		%meta{:name => "viewport", :content => "width=device-width"}
+		
+		%title= @title || "FamFarm"
 		%link{:rel => "shortcut icon", :type => "image/x-icon", :href => "/images/favicon.ico"}
 		%link{:rel=>'stylesheet', :href=>'/famfarm.css', :type => "text/css"}
 		%script{:type => "text/javascript", :src => 'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'}
+		%script{:type => "text/javascript", :src => '/javascript/jquery.wiggle.js'}
 		%script{:type => "text/javascript", :src => '/javascript/famfarm.js'}
 	%body
 		#content

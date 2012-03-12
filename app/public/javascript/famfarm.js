@@ -14,6 +14,7 @@ function load_images(page) {
 		var picImage = "#pic_image_" + picIndex;
 		$(picImage).attr("src", '/images/animal_' + i + '.png');
 		$(picImage).attr("data-sound", '/sounds/animal_' + i + '.mp3');
+		$(picImage).wiggle('start', {limit: 5})
 		picIndex++;
 	}	
 }
