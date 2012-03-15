@@ -20,6 +20,17 @@ function load_images(page) {
 }
 
 
+function mouseOver(id) {
+	$(id).css("cursor", "pointer");
+	$(id).css("background-color", "#a20cd3");
+	$(id).wiggle('start', {limit: 5})
+}
+
+function mouseOut(id) {
+	$(id).css("background-color", "#ffffff");
+	$(id).wiggle('stop')
+}
+
 $(document).ready(function() {
 	
 	var page = 1;
@@ -53,39 +64,35 @@ $(document).ready(function() {
 	});
 	
 	$("#pic_1").mouseover(function() {
-		$("#pic_1").css("cursor", "pointer");
-		$("#pic_1").css("background-color", "#a20cd3");
+		mouseOver("#pic_1");
 	});
 	
 	$("#pic_1").mouseout(function() {
-		$("#pic_1").css("background-color", "#ffffff");
+		mouseOut("#pic_1")
 	});
 
 	$("#pic_2").mouseover(function() {
-		$("#pic_2").css("cursor", "pointer");
-		$("#pic_2").css("background-color", "#a20cd3");
+		mouseOver("#pic_2");
 	});
 	
 	$("#pic_2").mouseout(function() {
-		$("#pic_2").css("background-color", "#ffffff");
+		mouseOut("#pic_2");
 	});
 
 	$("#pic_3").mouseover(function() {
-		$("#pic_3").css("cursor", "pointer");
-		$("#pic_3").css("background-color", "#a20cd3");
+		mouseOver("#pic_3");
 	});
 	
 	$("#pic_3").mouseout(function() {
-		$("#pic_3").css("background-color", "#ffffff");
+		mouseOut("#pic_3");
 	});
 
 	$("#pic_4").mouseover(function() {
-		$("#pic_4").css("cursor", "pointer");
-		$("#pic_4").css("background-color", "#a20cd3");
+		mouseOver("#pic_4");
 	});
 	
 	$("#pic_4").mouseout(function() {
-		$("#pic_4").css("background-color", "#ffffff");
+		mouseOut("#pic_4");
 	});
 
 	$("#left_arrow").mouseover(function() {
