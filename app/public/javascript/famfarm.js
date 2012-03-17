@@ -6,9 +6,9 @@ function play(soundfile) {
 
 function load_images(page) {
 	var numTiles = 4
-	var stopAt = (page * numTiles) + page;
+	var stopAt = (page * numTiles);
 	var startAt = stopAt - numTiles;
-	var picIndex = 1;
+	var picIndex = 0;
 	
 	for(var i = startAt; i <= stopAt; i++) {
 		var picImage = "#pic_image_" + picIndex;
@@ -38,11 +38,17 @@ $(document).ready(function() {
 	
 	$("#left_arrow").click(function() {
 		page = page - 1;
+		if(page < 1) {
+			page = 4;
+		}
 		load_images(page)
 	});
 	
 	$("#right_arrow").click(function() {
 		page = page + 1;
+		if(page > 4) {
+			page = 1;
+		}
 		load_images(page)
 	});
 	
