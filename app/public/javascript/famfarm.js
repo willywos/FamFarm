@@ -1,4 +1,8 @@
 
+function mapSoundFile(soundfile) {
+	
+}
+
 function play(soundfile) {
 	$("#sound").html("<audio controls preload=\"auto\" src=\"" + soundfile + "\" autoplay=\"autoplay\" autobuffer></audio>");
 	$("#sound").css("visibility", "hidden");
@@ -13,7 +17,7 @@ function load_images(page) {
 	for(var i = startAt; i <= stopAt; i++) {
 		var picImage = "#pic_image_" + picIndex;
 		$(picImage).attr("src", '/images/animal_' + i + '.png');
-		$(picImage).attr("data-sound", '/sounds/animal_' + i + '.mp3');
+		$(picImage).attr("data-sound", '/sounds/animal_' + i + '.wav');
 		$(picImage).wiggle('start', {limit: 5})
 		picIndex++;
 	}	
